@@ -4,6 +4,7 @@ from Models.Model import Model
 from Models.Mountains import Mountains
 from Models.Regons import Regons
 
+# Методы для таблицы Climbers
 # climber = Model()
 # print(climber.get('Climbers'))
 
