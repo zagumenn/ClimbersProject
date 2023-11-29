@@ -8,7 +8,6 @@ db = mysql.connector.connect(
   database="climbersproject"
 )
 
-
 cursor = db.cursor()
 # 1.) Функция для показа списка групп, осуществлявших восхождение для каждой горы в хронологическом порядке
 def show_groups_by_mountain():
@@ -87,7 +86,7 @@ def get_climbers_count_by_mountain():
     for row in result:
         print(f"Гора: {row[0]}, Количество альпинистов: {row[1]}")
 
-# Пример использования функций
+
 show_groups_by_mountain()
 add_mountain("Эверест", 8848, 1, 1)
 update_mountain(1, "Килиманджаро", 5895, 2, 1)
@@ -97,6 +96,4 @@ show_climber_mountain_counts()
 show_ascents_by_date_interval("2023-01-01", "2023-12-31")
 add_group("Группа 1", 1, "2023-01-01")
 get_climbers_count_by_mountain()
-
-# Закрытие соединения с базой данных
 db.close()
