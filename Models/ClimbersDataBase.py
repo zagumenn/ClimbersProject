@@ -86,7 +86,6 @@ def get_climbers_count_by_mountain():
     for row in result:
         print(f"Гора: {row[0]}, Количество альпинистов: {row[1]}")
 
-
 show_groups_by_mountain()
 add_mountain("Эверест", 8848, 1, 1)
 update_mountain(1, "Килиманджаро", 5895, 2, 1)
