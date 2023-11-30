@@ -1,16 +1,12 @@
-# Подчинёный класс - класс в котором обрабатывается информация таблицы Mountains
-from mysql.connector import cursor
-
+# Подчинёный класс - класс в котором обрабатывается информация таблицы Regons
 from Models.Model import Model
 
 
-class Mountains(Model):
+class Regions(Model):
     # приватное поле Имя таблицы
-    __nameTable = 'Mountains'
-    __name = 'name'
-    __height = 'height'
-    __region_id = 'region_id'
+    __nameTable = 'Regons'
     __country = 'country'
+    __region = 'region'
     # Метод вывода всех записей из таблицы
     def get(self):
         return super().get(self.__nameTable)
@@ -21,10 +17,10 @@ class Mountains(Model):
 
     # Добавить запись в таблицу
     def add(self):
-        name = input("Введите название: ")
-        height = input("Введите высоту: ")
-        str = f"{self.__name},{self.__height}"
-        super().add(self.__nameTable, str, name,height)
+        country= input("Введите страну: ")
+        region = input("Введите регион: ")
+        str = f"{self.__country},{self.__region}"
+        super().add(self.__nameTable, str, country,region)
 
     # Удалить запись из таблицы запись в таблицу
     def delete(self, id):
@@ -37,10 +33,6 @@ class Mountains(Model):
         values = input("введите новое значение")
         super().update(self.__nameTable,id,field,values)
 
-    def getOneRow(self, id):
-        if super().getOneRow(self.__nameTable, id) != ():
-            return super().getOneRow(self.__nameTable, id)[0]
-    @property
-    def getMountsClimbers(self):
-        return super().getMountsClimbers()
-
+    def getOneRow(self,id):
+        if super().getOneRow(self.__nameTable,id) != ():
+            return super().getOneRow(self.__nameTable,id)[0]
