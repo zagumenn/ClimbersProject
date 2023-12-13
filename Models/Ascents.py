@@ -9,7 +9,9 @@ class Ascents(Model):
     __start_time = 'start_time'
     __finish_time = 'finish_time'
     __mountain_id = 'mountain_id'
+
     # Метод вывода всех записей из таблицы
+
     def get(self):
         return super().get(self.__nameTable)
 
@@ -37,3 +39,6 @@ class Ascents(Model):
         field = input("Введите название поля")
         values = input("введите новое значение")
         super().update(self.__nameTable,id,field,values)
+
+    def getOneRow(self,id):
+        return super().getOneRow(self.__nameTable,id)

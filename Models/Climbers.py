@@ -20,7 +20,7 @@ class Climbers(Model):
         name = input("Введите имя: ")
         address = input("Введите адрес: ")
         str = f"{self.__name},{self.__address}"
-        super().add(self.__nameTable, str, name,address)
+        super().add(self.__nameTable, str, name, address)
 
     # Удалить запись из таблицы запись в таблицу
     def delete(self, id):
@@ -32,3 +32,13 @@ class Climbers(Model):
         field = input("Введите название поля")
         values = input("введите новое значение")
         super().update(self.__nameTable, id, field, values)
+
+    def getClimbersDateInterval(self, first_date, lost_date):
+        return super().getClimbersDateInterval(first_date, lost_date)
+
+    def getLastRow(self):
+        return super().getLastRow(self.__nameTable)[0]
+
+    def getOneRow(self, id):
+        return super().getOneRow(self.__nameTable, id)
+

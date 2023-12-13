@@ -10,3 +10,4 @@ def connnection():
         database = 'rybin_Climbers',
         cursorclass = DictCursor
     )
+

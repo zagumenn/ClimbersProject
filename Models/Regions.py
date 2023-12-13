@@ -8,6 +8,7 @@ class Regions(Model):
     __country = 'country'
     __region = 'region'
     # Метод вывода всех записей из таблицы
+
     def get(self):
         return super().get(self.__nameTable)
 
@@ -19,6 +20,7 @@ class Regions(Model):
     def add(self):
         country= input("Введите страну: ")
         region = input("Введите регион: ")
+
         str = f"{self.__country},{self.__region}"
         super().add(self.__nameTable, str, country,region)
 
@@ -34,5 +36,9 @@ class Regions(Model):
         super().update(self.__nameTable,id,field,values)
 
     def getOneRow(self,id):
-        if super().getOneRow(self.__nameTable,id) != ():
-            return super().getOneRow(self.__nameTable,id)[0]
+        if super().getOneRow(self.__nameTable, id) != ():
+            return super().getOneRow(self.__nameTable, id)[0]
+
+    @property
+    def getLastRow(self):
+        return super().getLastRow(self.__nameTable)[0]
